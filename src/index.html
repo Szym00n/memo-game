@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memo+</title>
+    <script defer type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="app-header">
+        <h1>Memo+</h1>
+        <button data-action="play" class="btn btn--primary btn--rounded">
+          Restart
+        </button>
+        <button data-action="settings" class="btn btn--round">Nowa Gra</button>
+      </header>
+      <div id="memo-grid" class="memo-grid"></div>
+      <div id="results" class="results"></div>
+    </div>
+    <dialog class="game-settings dialog" data-dialog="settings">
+      <header class="dialog__title">
+        <p>Wybierz ustawienia rozgrywki</p>
+      </header>
+      <form method="dialog" class="dialog__body" name="settings">
+        <div class="form-field">
+          <p class="form-field__description text-center">
+            Rozmiar planszy <small>(poziom trudności)</small>
+          </p>
+          <ul class="radio-list">
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="dimensions"
+                id="size1"
+                value="4x4"
+              /><label for="size1" class="btn">4 &times; 4</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="dimensions"
+                id="size2"
+                value="4x5"
+              /><label for="size2" class="btn">4 &times; 5</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="dimensions"
+                id="size3"
+                value="5x6"
+              /><label for="size3" class="btn">5 &times; 6</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="dimensions"
+                id="size4"
+                value="6x6"
+              /><label for="size4" class="btn">6 &times; 6</label>
+            </li>
+          </ul>
+        </div>
+        <div class="form-field">
+          <p class="form-field__description text-center">Temat kart</p>
+          <ul class="radio-list theme-list">
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="theme"
+                id="theme1"
+                value="numbers"
+              /><label for="theme1" class="btn">Liczby</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="theme"
+                id="theme2"
+                value="colors"
+              /><label for="theme2" class="btn">Kolory</label>
+            </li>
+          </ul>
+        </div>
+        <div class="form-field">
+          <p class="form-field__description text-center">Liczba graczy</p>
+          <ul class="radio-list">
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="players"
+                id="player1"
+                value="1"
+              /><label for="player1" class="btn">1</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="players"
+                id="player2"
+                value="2"
+              /><label for="player2" class="btn">2</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="players"
+                id="player3"
+                value="3"
+              /><label for="player3" class="btn">3</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                class="sr-only"
+                name="players"
+                id="player4"
+                value="4"
+              /><label for="player4" class="btn">4</label>
+            </li>
+          </ul>
+        </div>
+        <p class="form-field">
+          <button type="submit" value="save" class="btn--primary btn--wide">
+            Rozpocznij nową grę
+          </button>
+        </p>
+      </form>
+    </dialog>
+    <dialog class="game-settings dialog-covering" data-dialog="game-over">
+      <p class="dialog__title">KONIEC GRY</p>
+      <form name="game-over" method="dialog" class="dialog__body">
+        <div id="game-over-results"></div>
+        <p class="form-field">
+          <button
+            type="submit"
+            data-action="play"
+            class="btn--primary btn--wide"
+          >
+            Zagraj jeszcze raz
+          </button>
+          <button type="submit" data-action="settings" class="btn--wide">
+            Skonfiguruj nową grę
+          </button>
+        </p>
+      </form>
+    </dialog>
+  </body>
+</html>

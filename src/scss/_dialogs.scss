@@ -1,0 +1,201 @@
+@import 'variables';
+
+@import 'variables';
+
+dialog {
+  position: fixed;
+  width: clamp(300px, 500px, 90%);
+  margin: auto;
+  overflow: visible;
+
+  background: none;
+  border: 0;
+
+  &::backdrop {
+    background: hsla(144, 55.6%, 94.7%, 0.5);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.dialog__body {
+  padding: 1em 1em;
+  background: #fff;
+}
+
+.dialog--rounded {
+  border-radius: 1rem;
+}
+
+.dialog__title {
+  padding: 1rem 2rem;
+  background: #041638;
+  font-size: 1.2rem;
+  color: #fafafa;
+  text-align: center;
+}
+
+.dialog__description {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.form-field {
+  margin: 0 0 1em 0;
+  padding: 0 1rem;
+}
+
+.form-field__description {
+  font-size: 1.25rem;
+  margin-bottom: 1ex;
+}
+
+// Multiplayer results
+
+.players-list {
+  list-style-type: decimal;
+  margin-bottom: 1em;
+}
+
+.player-result {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 1ex 0;
+  padding: 1ex 1em;
+  background: $color-light;
+  border-radius: 1ex;
+
+  & li:first-child {
+    @extend .player-record;
+    background: #041638;
+    color: #fafafa;
+  }
+}
+
+.player-record {
+  background: #041638;
+  color: #fafafa;
+
+  & input {
+    color: white;
+
+    &::before {
+      content: 'aaaa';
+    }
+  }
+}
+
+// FORM FIELDS
+
+button,
+.btn {
+  display: inline-block;
+  padding: 1ex 1em;
+  border: 0;
+  border-radius: 1rem;
+
+  background: #d7eade;
+  color: #333;
+  font-weight: 400;
+  font-size: 1rem;
+
+  &:hover,
+  &:focus {
+    outline: 2px solid rgb(255, 203, 124);
+    box-shadow: 0 0 15px rgb(255, 203, 124);
+    cursor: pointer;
+  }
+}
+
+.btn--primary {
+  background: salmon;
+}
+
+.btn--wide {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+input[type='radio']:checked + label {
+  background: lightseagreen;
+}
+
+.input--transparent {
+  border: 0;
+  outline: 1px solid transparent;
+  font-size: 1em;
+  font-family: serif;
+  background: none;
+}
+
+.radio-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  list-style: none;
+
+  & > li {
+    min-width: 22%;
+  }
+}
+
+.radio-list label {
+  display: inline-block;
+  width: 100%;
+  padding: 1.5ex 1.5em;
+  border-radius: 1ex;
+  background: rgb(141, 147, 157);
+
+  color: #fafafa;
+  font-weight: 600;
+  text-align: center;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-list input:disabled + label {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/*////////////////*/
+
+#game-over-results {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.dialog__header {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dialog__result p {
+  display: flex;
+  justify-content: space-around;
+  background: #d7eade;
+  margin-inline: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  max-width: 20ch;
+}
+
+.winner-score p {
+  background-color: #041638;
+  color: #fafafa;
+}
+
+li.dialog__result {
+  list-style: none;
+}
+
+span:last-child {
+  font-weight: bold;
+}
